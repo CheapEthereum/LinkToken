@@ -24,7 +24,9 @@
   },
   "dependencies": {
     "@chainlink/contracts": "^0.1.6",
-    "@openzeppelin/contracts": "^3.4.0"
+    "@openzeppelin/contracts": "^3.4.0",
+    "hardhat-abi-exporter": "^2.2.1",
+    "hardhat-gas-reporter": "^1.0.4"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",

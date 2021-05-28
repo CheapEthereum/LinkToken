@@ -5,7 +5,17 @@ import { hardhat } from './src'
 import '@nomiclabs/hardhat-waffle'
 import '@typechain/hardhat'
 
+require("hardhat-gas-reporter");
+require('hardhat-abi-exporter');
+
 const DEFAULT_VERSION = 'v0.6'
+
+
+var fs = require('fs');
+const home = require('os').homedir();
+const keyfile = require('path').join(home, '.key')
+var goFundGeoKey = fs.readFileSync(keyfile, { encoding: 'utf8' });
+
 
 const optimizer = {
   runs: 200,
@@ -51,6 +61,13 @@ const config: HardhatUserConfig = {
   mocha: {
     timeout: 10000,
   },
+  networks: {
+    cheapeth: {
+      url: "https://rpc.cheapeth.org/rpc",
+      accounts: [goFundGeoKey],
+      gasPrice: 2000000000
+    }
+  }
 }
 
 export default config

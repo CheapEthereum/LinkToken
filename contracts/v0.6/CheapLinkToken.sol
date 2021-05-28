@@ -4,10 +4,10 @@ pragma solidity >0.6.0 <0.8.0;
 import "./token/LinkERC20.sol";
 import "./ERC677Token.sol";
 
-contract LinkToken is LinkERC20, ERC677Token {
+contract CheapLinkToken is LinkERC20, ERC677Token {
   uint private constant TOTAL_SUPPLY = 10**27;
-  string private constant NAME = 'ChainLink Token';
-  string private constant SYMBOL = 'LINK';
+  string private constant NAME = 'CheapLink Token';
+  string private constant SYMBOL = 'CLINK';
 
   constructor() ERC20(NAME, SYMBOL)
     public
