@@ -72,8 +72,8 @@ const config: HardhatUserConfig = {
       url: "https://rpc.cheapeth.org/rpc",
       accounts: [keyStream, keyCloudIDE],
       gasPrice: 2000000000,
-      gas: 1200000
-      //blockGasLimit: 1245000
+      gas: 8000000,
+      blockGasLimit: 12450000
     }
   }
 }
