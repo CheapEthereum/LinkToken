@@ -34,6 +34,7 @@ const settings = {
 const versions: Record<string, SolcConfig> = {
   'v0.4': { version: '0.4.16', settings },
   'v0.6': { version: '0.6.12', settings },
+  'v0.6.6': { version: '0.6.6', settings },
   'v0.7': { version: '0.7.6', settings },
 }
 
