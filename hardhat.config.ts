@@ -13,8 +13,12 @@ const DEFAULT_VERSION = 'v0.6'
 
 var fs = require('fs');
 const home = require('os').homedir();
-const keyfile = require('path').join(home, '.key')
-var goFundGeoKey = fs.readFileSync(keyfile, { encoding: 'utf8' });
+
+const keyStreamFile = require('path').join(home, '.key-stream')
+var keyStream = fs.readFileSync(keyStreamFile, { encoding: 'utf8' });
+
+const keyCloudIDEFile = require('path').join(home, '.key-cloudide')
+var keyCloudIDE = fs.readFileSync(keyCloudIDEFile, { encoding: 'utf8' });
 
 
 const optimizer = {
@@ -33,6 +37,7 @@ const settings = {
 
 const versions: Record<string, SolcConfig> = {
   'v0.4': { version: '0.4.16', settings },
+  'v0.4.24': { version: '0.4.24', settings },
   'v0.6': { version: '0.6.12', settings },
   'v0.6.6': { version: '0.6.6', settings },
   'v0.7': { version: '0.7.6', settings },
@@ -65,8 +70,10 @@ const config: HardhatUserConfig = {
   networks: {
     cheapeth: {
       url: "https://rpc.cheapeth.org/rpc",
-      accounts: [goFundGeoKey],
-      gasPrice: 2000000000
+      accounts: [keyStream, keyCloudIDE],
+      gasPrice: 2000000000,
+      gas: 1200000
+      //blockGasLimit: 1245000
     }
   }
 }
