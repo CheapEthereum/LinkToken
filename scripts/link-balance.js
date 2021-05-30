@@ -8,7 +8,7 @@ async function main() {
 
 
     const result = await
-      CheapLinkInstance.connect(accountCloudIDE).balanceOf("0x7cA8b54d60f707c9948f9d065909421CF43ef1F5")
+      CheapLinkInstance.connect(accountCloudIDE).balanceOf("0x2960d4828357772aebbCaC2C23516A7F20A34FB7")
     console.log("LINK Balance: ", result.toString())
   }
 
